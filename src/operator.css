@@ -1,0 +1,14 @@
+.operator{
+    /*border: darkviolet  solid;*/
+    /*display: none;*/
+    /*width: 60%;*/
+    margin-bottom: 10px;
+    padding-top: 30px;
+    height: 60%;
+    width: 25%;
+    display: flex;
+    flex-direction:column ;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}

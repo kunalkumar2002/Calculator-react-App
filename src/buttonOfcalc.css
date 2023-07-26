@@ -1,0 +1,14 @@
+.button {
+    text-align: center;
+    font-size: xx-large;
+
+    height: 10%;
+    width: 20%;
+    border: white 2px solid;
+
+    margin: 4%;
+    color: white;
+  }
+.button:hover {
+    cursor:pointer;
+}
