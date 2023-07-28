@@ -5,12 +5,32 @@ import Number from './number';
 import Operator from './operator';
 import { useState } from 'react';
 
+import Evaluate from './eveluatExp';
+
 function App() {
 
   let [state , setState] = useState(``);
 
   function evaluate(){
+    // console.log("hello");
     
+    let final = Evaluate(state);
+
+    if(typeof(final) === 'number'){
+      final = final.toString();
+    }
+
+    if(final === undefined){
+      final = "";
+    }
+
+    setState(final);
+  }
+
+  function check(){
+    if(state === 'Cannot divide by zero ' || state === 'Invalid Expression '){
+      clear();
+    }
   }
 
   function clear(){
@@ -20,9 +40,12 @@ function App() {
 
   function handleInputKeyBord(e){
     // console.log(e);
+    check();
+    // console.log(e.key)
     if(e.key === 'Enter'){
       evaluate()
     }
+    
     else{
 
       state = (e.target.value);
@@ -34,10 +57,12 @@ function App() {
   }
 
   function handleInputButton(e){
+    check();
     if(e.target.id === 'clear'){
       clear();
     }
     else if(e.target.id === '='){
+      // console.log("hello")
       evaluate();
     }
     else {
