@@ -81,15 +81,15 @@ function Evaluate(expression)
 
         // Current token is a number,
         // push it to stack for numbers
-        if (tokens[i] >= '0' && tokens[i] <= '9')
+        if ((tokens[i] >= '0' && tokens[i] <= '9') || tokens[i] === '.')
         {
             let sbuf = "";
 
             // There may be more than
             // 1 digits in number
-            while (i < tokens.length &&
+            while ((i < tokens.length &&
             tokens[i] >= '0' &&
-            tokens[i] <= '9')
+            tokens[i] <= '9') || tokens[i] === '.')
             {
                 sbuf = sbuf + tokens[i++];
             }
